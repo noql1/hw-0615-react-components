@@ -1,10 +1,11 @@
 //импортируем .svg картинки как компоненты Реакт
 import { ReactComponent as StarWarsLogoSVG } from "../../assets/star-wars.svg";
-import { ReactComponent as IconSearchSVG } from "../../assets/icon-search.svg";
+// import { ReactComponent as IconSearchSVG } from "../../assets/icon-search.svg";
 import { ReactComponent as FacebookLogoSVG } from "../../assets/facebook.svg";
 import { ReactComponent as InstagramLogoSVG } from "../../assets/instagram.svg";
 import { ReactComponent as TwitterLogoSVG } from "../../assets/twitter.svg";
 import { ReactComponent as YoutubeLogoSVG } from "../../assets/youtube.svg";
+import { TextField } from '@mui/material';
 
 //массив данных ссылок
 const swLinks = [
@@ -48,13 +49,22 @@ export const Header = ({ fan }) => {
         ))}
       </div>
       <StarWarsLogoSVG />
+
       <div className="search-layout">
-        <IconSearchSVG className="search-icon" />
-        <input placeholder="Search Star Wars" type="text" />
-        <div style={{ color: "white", paddingTop: "1rem" }}>
-          I am fan of: {fan}
-        </div>
+        <TextField
+        label="Search"
+        variant="outlined"
+        // color="indigo" 
+        sx={{ input: { color: 'white' } }}
+        focused
+        />
+          {/* <IconSearchSVG className="search-icon" />
+          <input placeholder="Search Star Wars" type="text" /> */}
+          <div style={{ color: "white", paddingTop: "1rem" }}>
+            I am fan of: {fan}
+          </div>
       </div>
+
     </header>
   );
 };
